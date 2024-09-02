@@ -1,0 +1,205 @@
+/* Reset some basic elements */
+body, h1, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9ff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.6;
+}
+
+header {
+    width: 100%;
+    padding: 20px 0; /* Adjusted padding to reduce space */
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header .logo img {
+    max-width: 100;
+    height: auto;
+    max-height: 100px; /* Adjust this to change the height of the image */
+    object-fit: contain; /* Ensures the image scales properly */
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.birthday-announcement {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.birthday-announcement .text-content {
+    max-width: 600px;
+    position: relative;
+    z-index: 2; /* Ensure content is above everything */
+}
+
+.birthday-announcement h1 {
+    font-size: 48px;
+    color: #4c6ef5;
+    margin-bottom: 10px;
+}
+
+.birthday-announcement p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.birthday-announcement button {
+    background-color: #4c6ef5;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    z-index: 2; /* Ensure button is above everything */
+    position: relative;
+}
+
+.birthday-announcement button:hover {
+    background-color: #3651ba;
+}
+
+.birthday-announcement .image-content {
+    max-width: 400px;
+    position: relative;
+    z-index: 1; /* Ensure image is behind content and button */
+}
+
+.birthday-announcement .image-content img {
+    max-width: 100%;
+    border-radius: 20px;
+    transition: opacity 0.5s ease;
+    position: relative;
+}
+
+.birthday-announcement .image-content img.hidden {
+    opacity: 0;
+}
+
+/* More content styling */
+#moreContent {
+    margin-top: 20px;
+    position: relative;
+    min-height: 100px;
+    padding-bottom: 40px; /* Space for dots and button */
+    z-index: 1;
+}
+
+.part {
+    display: none;
+}
+
+.part.active {
+    display: block;
+    animation: fade-in 0.5s forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide indicators */
+.slide-indicators {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+    position: relative;
+    z-index: 2; /* Ensure dots are above everything */
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.active-dot {
+    background-color: #4c6ef5;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .birthday-announcement {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .birthday-announcement .text-content,
+    .birthday-announcement .image-content {
+        text-align: center;
+    }
+
+    .birthday-announcement .image-content img {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header nav ul li a {
+        font-size: 14px;
+    }
+
+    .birthday-announcement h1 {
+        font-size: 36px;
+    }
+
+    .birthday-announcement p {
+        font-size: 16px;
+    }
+
+    .birthday-announcement button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}
