@@ -1,7 +1,7 @@
 document.querySelector('#readMoreBtn').addEventListener('click', function() {
     const parts = document.querySelectorAll('.part');
     const images = [
-        '/1.jpg',  // Replace this with the actual image path for "Happy Birthday!"
+        './1.jpg',  // Replace this with the actual image path for "Happy Birthday!"
         '/IMG-20240801-WA0032.jpg',  // Replace this with the actual image path for "About My Sister"
         '/IMG-20240801-WA0033.jpg'   // Replace this with the actual image path for "Wishing You All the Best"
     ];
